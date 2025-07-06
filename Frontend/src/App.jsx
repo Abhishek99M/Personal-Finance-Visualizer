@@ -9,11 +9,12 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
-
+  //console.log("Hi i am here");
   const fetchTransactions = async () => {
     const res = await axios.get(`${API_BASE_URL}/api/transactions`);
     setTransactions(res.data);
   };
+  //console.log("Hi i am here 2");
 
   useEffect(() => {
     fetchTransactions();

@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: 'https://personal-finance-visualizer-ten-orpin.vercel.app/', // Vite's default port for frontend
+  origin: 'http://localhost:5173', // Vite's default port for frontend
   credentials: true
 }));
 app.use(express.json());
@@ -27,3 +27,4 @@ app.use('/api/transactions', transactionRoutes);
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 export default function TransactionForm({ fetchTransactions }) {
   const [form, setForm] = useState({ amount: '', date: '', description: '' });
 
@@ -11,7 +13,7 @@ export default function TransactionForm({ fetchTransactions }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:4000/api/transactions', form);
+      await axios.post(`${API_BASE_URL}/api/transactions`, form);
       setForm({ amount: '', date: '', description: '' });
       fetchTransactions();
     } catch (err) {

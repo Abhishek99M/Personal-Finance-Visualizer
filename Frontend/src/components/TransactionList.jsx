@@ -1,9 +1,11 @@
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 export default function TransactionList({ transactions, fetchTransactions }) {
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/transactions/${id}`);
+      await axios.delete(`${API_BASE_URL}/api/transactions/${id}`);
       fetchTransactions();
     } catch (err) {
       console.error("Failed to delete:", err);

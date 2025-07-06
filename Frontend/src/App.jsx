@@ -4,11 +4,14 @@ import TransactionForm from './components/TransactionForm';
 import TransactionList from './components/TransactionList';
 import Chart from './components/ExpensesChart';
 
+// Use environment variable for backend URL, fallback to local if not set
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 function App() {
   const [transactions, setTransactions] = useState([]);
 
   const fetchTransactions = async () => {
-    const res = await axios.get("http://localhost:4000/api/transactions");
+    const res = await axios.get(`${API_BASE_URL}/api/transactions`);
     setTransactions(res.data);
   };
 

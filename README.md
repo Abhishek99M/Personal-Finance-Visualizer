@@ -103,9 +103,4 @@ App will run at `http://localhost:5173`
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-```
 
----
-
-Let me know if you'd like a `README` for **Stage 2 or 3**, or if you need help generating screenshots or deployment setup instructions!
-```

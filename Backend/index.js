@@ -9,8 +9,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://personal-finance-visualizer-fronten.vercel.app'
+];
+
 app.use(cors({
-  origin: 'https://personal-finance-visualizer-fronten.vercel.app/', // Vite's default port for frontend
+  origin: allowedOrigins, // Vite's default port for frontend
   credentials: true
 }));
 app.use(express.json());

@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://personal-finance-visualizer-fronten.vercel.app'
+  'https://personal-finance-visualizer-lake.vercel.app'
 ];
 
 app.use(cors({

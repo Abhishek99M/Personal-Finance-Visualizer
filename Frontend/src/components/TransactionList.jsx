@@ -15,11 +15,16 @@ export default function TransactionList({ transactions, fetchTransactions }) {
   return (
     <ul className="mt-4">
       {transactions.map((txn) => (
-        <li key={txn._id} className="flex justify-between items-center border p-2">
-          <div>
-            ₹{txn.amount} | {new Date(txn.date).toLocaleDateString()} | {txn.description}
+        <li key={txn._id} className="flex justify-between items-center border-gray-700 p-2">
+          <div className='border-2 border-gray-700 p-2 rounded font-semibold'>
+            ₹{txn.amount} | {new Date(txn.date).toLocaleDateString()} | {txn.description} | {txn.category}
           </div>
-          <button onClick={() => handleDelete(txn._id)}>Delete</button>
+          <button
+            onClick={() => handleDelete(txn._id)}
+            className="p-2 border border-gray-700 font-bold rounded hover:bg-red-700 transition duration-200"
+            >
+            Delete
+          </button>
         </li>
       ))}
     </ul>

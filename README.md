@@ -1,46 +1,75 @@
+# 💰 Personal Finance Visualizer
 
-# 💰 Personal Finance Visualizer (Stage 1)
-
-A basic web application for tracking personal expenses. Users can add, edit, and delete transactions, view them in a list, and visualize monthly expenses with a bar chart. Built using **React (Vite)** for the frontend and **Node.js + Express + MongoDB** for the backend.
+A full-featured personal expense management app built in **three stages**, this project enables users to track spending, categorize expenses, set budgets, and visualize financial behavior through interactive charts and insights.
 
 ---
 
-## 🔹 Features (Stage 1)
+## 🔥 Stages Overview
 
-- ✅ Add, edit, and delete transactions
-- ✅ Fields: `amount`, `date`, `description`
-- ✅ View transactions in a table/list
-- ✅ Monthly expenses bar chart using Recharts
-- ✅ Basic form validation with error handling
-- ✅ Responsive UI using **shadcn/ui + Tailwind CSS**
+### ✅ Stage 1: Basic Transaction Tracking
+
+* Add, edit, delete transactions
+* Fields: `amount`, `date`, `description`
+* Transaction list
+* Monthly expenses bar chart
+
+### ✅ Stage 2: Categories & Dashboard
+
+* Predefined categories for transactions
+* Category-wise pie chart
+* Dashboard summary cards:
+
+  * Total expenses
+  * Category breakdown
+  * Most recent transactions
+
+### ✅ Stage 3: Budgeting & Insights
+
+* Set monthly budgets by category
+* Budget vs. actual chart
+* Spending insights:
+
+  * Overspending alerts
+  * Remaining budget display
 
 ---
 
 ## 🧰 Tech Stack
 
-| Frontend     | Backend     | Database | UI         | Charts    |
-|--------------|-------------|----------|------------|-----------|
-| React + Vite | Node + Express | MongoDB  | shadcn/ui + Tailwind | Recharts |
+| Frontend     | Backend           | Database | UI Framework      | Charts   |
+| ------------ | ----------------- | -------- | ----------------- | -------- |
+| React (Vite) | Node.js + Express | MongoDB  | Tailwind + shadcn | Recharts |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-
 Personal-Finance-Visualizer/
 ├── frontend/
-│   └── components/
+│   ├── components/
+│   │   ├── TransactionForm.jsx
+│   │   ├── TransactionList.jsx
+│   │   ├── ExpensesChart.jsx
+│   │   ├── CategoryPieChart.jsx
+│   │   ├── DashboardSummary.jsx
+│   │   ├── BudgetForm.jsx
+│   │   ├── BudgetVsActualChart.jsx
+│   │   └── SpendingInsights.jsx
 │   └── App.jsx
 ├── backend/
 │   ├── models/
-│   │   └── Transaction.js
+│   │   ├── transactionModel.js
+│   │   └── budgetModel.js
+│   ├── controllers/
+│   │   ├── transactionController.js
+│   │   └── budgetController.js
 │   ├── routes/
-│   │   └── transactionRoutes.js
+│   │   ├── transactionRoutes.js
+│   │   └── budgetRoute.js
 │   └── server.js
 ├── .env
-
-````
+```
 
 ---
 
@@ -51,7 +80,7 @@ Personal-Finance-Visualizer/
 ```bash
 cd backend
 npm install
-````
+```
 
 Create a `.env` file:
 
@@ -60,7 +89,7 @@ PORT=4000
 DATABASE_URL=your_mongodb_connection_string
 ```
 
-Start the backend server:
+Start the server:
 
 ```bash
 node server.js
@@ -74,20 +103,30 @@ npm install
 npm run dev
 ```
 
-App will run at `http://localhost:5173`
+Visit: `http://localhost:5173`
 
 ---
 
-## 📸 Screenshots (Optional)
+## 🌐 API Endpoints
 
-*Add screenshots of your app UI here like transaction form, chart, etc.*
+### Transactions
+
+* `GET /api/transactions` — Fetch all transactions
+* `POST /api/transactions` — Add a transaction
+* `DELETE /api/transactions/:id` — Delete a transaction
+
+### Budgets
+
+* `GET /api/budgets` — Fetch all budgets
+* `POST /api/budgets` — Add a monthly budget
 
 ---
+
 
 ## 🚀 Live Demo (Optional)
 
-* 🔗 [Live Deployment URL](https://your-live-link)
-* 📁 [GitHub Repo](https://github.com/your-username/Personal-Finance-Visualizer)
+* 🔗 [Live URL](https://personal-finance-visualizer-lake.vercel.app/)
+* 💻 [GitHub](https://github.com/your-username/Personal-Finance-Visualizer)
 
 ---
 
@@ -95,12 +134,10 @@ App will run at `http://localhost:5173`
 
 **Abhishek Kumar**
 
-> [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/your-username)
+> [LinkedIn](https://www.linkedin.com/in/abhishek-kumar-a04701233/) | [GitHub](https://github.com/Abhishek99M)
 
 ---
 
 ## 📄 License
 
-This project is open-source and available under the [MIT License](LICENSE).
-
-
+This project is licensed under the [MIT License](LICENSE).

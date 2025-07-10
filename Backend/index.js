@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import transactionRoutes from './routes/transactionRoutes.js';
-
+import budgetRoutes from './routes/budgetRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -28,6 +28,7 @@ mongoose.connect(process.env.DATABASE_URL, {
   .catch((err) => console.error("MongoDB Error:", err));
 
 app.use('/api/transactions', transactionRoutes);
+app.use('/api/budgets', budgetRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);

@@ -15,7 +15,10 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: allowedOrigins, // Vite's default port for frontend
+  origin: [
+    "https://personal-finance-visualizer-lake.vercel.app", // your frontend URL
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"], // Vite's default port for frontend
   credentials: true
 }));
 app.use(express.json());

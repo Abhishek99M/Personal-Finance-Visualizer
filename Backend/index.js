@@ -30,6 +30,11 @@ mongoose.connect(process.env.DATABASE_URL, {
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/budgets', budgetRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Personal Finance Visualizer Backend is running ✅");
+});
+
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

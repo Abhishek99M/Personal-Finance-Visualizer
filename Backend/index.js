@@ -11,14 +11,11 @@ const PORT = process.env.PORT || 4000;
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://personal-finance-visualizer-lake.vercel.app'
+  'https://personal-finance-visualizer-fronten.vercel.app'
 ];
 
 app.use(cors({
-  origin: [
-    "https://personal-finance-visualizer-lake.vercel.app", // your frontend URL
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"], // Vite's default port for frontend
+  origin: allowedOrigins, // Vite's default port for frontend
   credentials: true
 }));
 app.use(express.json());
